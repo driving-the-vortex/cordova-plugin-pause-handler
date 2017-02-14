@@ -5,13 +5,12 @@
   <description>Cordova Pause Handler Plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova,pause</keywords>
-  <js-module src="www/pauseHandler.js" name="PauseHandler">
-    <clobbers target="PauseHandler" />
-  </js-module>
+  <repo>https://github.com/robvandijk/cordova-plugin-pause-handler.git</repo>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="PauseHandler">
         <param name="android-package" value="org.apache.cordova.pausehandler.PauseHandler"/>
+        <param name="onload" value="true" />
       </feature>
     </config-file>
     <source-file src="src/android/PauseHandler.java" target-dir="src/org/apache/cordova/pausehandler" />

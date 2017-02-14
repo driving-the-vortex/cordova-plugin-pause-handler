@@ -19,7 +19,9 @@ package org.apache.cordova.pausehandler;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.LOG;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.ICordovaCookieManager;
+import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,25 +30,16 @@ public class PauseHandler extends CordovaPlugin {
     private static final String LOG_TAG = "PauseHandler";
     private CordovaWebView webView;
 
-    public PauseHandler() {
-    }
-
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        Log.v(TAG, "Init PauseHandler");
+        Log.v(LOG_TAG, "Init PauseHandler");
         this.webView = webView;
     }
 
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
-        if (action.equals("flushCookies")) {
-            LOG.v(LOG_TAG, "IN flushCookies")''
-        } else {
-            return false;
-        }
-        return true;
-    }
-
+    @Override
     public void onPause(boolean multitasking) {
-        LOG.v(LOG_TAG, "IN onPause");
+        ICordovaCookieManager cookieManager = webView.getCookieManager();
+        cookieManager.flush();
+        Log.v(LOG_TAG, "Cookies flushed");
     }
 }
