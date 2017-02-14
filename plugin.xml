@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-pause-handler" version="0.1.0">
+  <name>Pause Handler</name>
+  <description>Cordova Pause Handler Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,pause</keywords>
+  <js-module src="www/pauseHandler.js" name="PauseHandler">
+    <clobbers target="PauseHandler" />
+  </js-module>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="PauseHandler">
+        <param name="android-package" value="org.apache.cordova.pausehandler.PauseHandler"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/PauseHandler.java" target-dir="src/org/apache/cordova/pausehandler" />
+  </platform>
+</plugin>
