@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-pause-handler",
+  "version": "0.1.1",
+  "description": "Cordova Pause Handler Plugin",
+  "cordova": {
+    "id": "cordova-plugin-pause-handler",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robvandijk/cordova-plugin-pause-handler.git"
+  },
+  "keywords": [
+    "cordova",
+    "pause",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Rob van Dijk",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/robvandijk/cordova-plugin-pause-handler/issues"
+  },
+  "homepage": "https://github.com/robvandijk/cordova-plugin-pause-handler#readme"
+}
